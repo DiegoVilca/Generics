@@ -39,9 +39,9 @@ namespace NuevoProyecto
         {
             foreach (T item in this.listaProductos)
             {
-                if (item == producto)
-                {
-                    return true;
+                if (item.Equals(producto)) //Como Deposito es clase generica no puedo usar la sobrecarga == ya que no sabe que comparar
+                {                           //En su lugar utilizo el Equals sobrecargado, cada clase que almacene Deposito 
+                    return true;             //Tendra su Equals sobrecargado.
                 }
             }
 

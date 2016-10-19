@@ -34,7 +34,8 @@ namespace NuevoProyecto
             return sb.ToString();
         }
 
-
+        //El Equals compara la clase que lo invoca con el objeto pasado por parametro
+        //Siempre debo castear el object.
         public override bool Equals(object obj)
         {
             if (this == (Producto)obj)
