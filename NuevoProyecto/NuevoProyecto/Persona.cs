@@ -17,6 +17,19 @@ namespace NuevoProyecto
             this.nombre = nombre;
         }
 
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("nombre: " + this.nombre);
+            sb.AppendLine("dni: " + this.dni);
+            
+
+            return sb.ToString();
+        }
+
+
         public static bool operator ==(Persona personaUno, Persona personaDos)
         {
             if (personaUno.dni == personaDos.dni)

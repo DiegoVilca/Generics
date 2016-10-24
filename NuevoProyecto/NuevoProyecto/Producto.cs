@@ -13,6 +13,13 @@ namespace NuevoProyecto
         public double precioDeVenta;
 
 
+        public Producto(int codigo, string descripcion, double precioDeVenta)
+        {
+            this.codigo = codigo;
+            this.descripcion = descripcion;
+            this.precioDeVenta = precioDeVenta;
+        }
+
         public static bool operator ==(Producto productoUno, Producto productoDos)
         {
             return productoUno.codigo == productoDos.codigo;
@@ -45,6 +52,7 @@ namespace NuevoProyecto
 
             return false;
         }
+
 
     }
 }

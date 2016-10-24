@@ -17,6 +17,18 @@ namespace NuevoProyecto
             this.raza = raza;
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("nombre: " + this.nombre);
+            sb.AppendLine("raza: " + this.raza);
+            
+
+            return sb.ToString();
+        }
+
+
         public static bool operator ==(Mascota mascotaUno, Mascota mascotaDos)
         {
             if (mascotaUno.nombre == mascotaDos.nombre && mascotaUno.raza== mascotaDos.raza)
@@ -25,6 +37,11 @@ namespace NuevoProyecto
             }
 
             return false;
+        }
+
+        public static bool operator !=(Mascota mascotaUno, Mascota mascotaDos)
+        {
+            return !(mascotaUno == mascotaDos);
         }
 
         public override bool Equals(object obj)

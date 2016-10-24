@@ -29,12 +29,6 @@ namespace NuevoProyecto
         }
 
 
-        public bool Agregar(Producto producto)
-        {
-            return this + producto;
-        }
-
-
         public bool ExisteElemento(Producto producto)
         {
             foreach (Producto item in this.listaProductos)
@@ -47,6 +41,14 @@ namespace NuevoProyecto
 
             return false;
         }
+
+
+
+        public bool Agregar(Producto producto)
+        {
+            return this + producto;
+        }
+
 
 
 

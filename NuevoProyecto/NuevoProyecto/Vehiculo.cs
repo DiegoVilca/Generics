@@ -10,14 +10,26 @@ namespace NuevoProyecto
     {
         public string marca;
         public string color;
-        public int patente;
+        public string patente;
 
 
-        public Vehiculo(string marca, string color, int patente)
+        public Vehiculo(string marca, string color, string patente)
         {
             this.marca = marca;
             this.color = color;
             this.patente = patente;
+        }
+
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("marca: " + this.marca);
+            sb.AppendLine("color: " + this.color);
+            sb.AppendLine("patente: " + this.patente);
+
+            return sb.ToString();
         }
 
         public static bool operator ==(Vehiculo vehiculoUno, Vehiculo vehiculoDos)
@@ -28,6 +40,11 @@ namespace NuevoProyecto
             }
 
             return false;
+        }
+
+        public static bool operator != (Vehiculo vehiculoUno, Vehiculo vehiculoDos)
+        { 
+            return !(vehiculoUno == vehiculoDos);
         }
 
         public override bool Equals(object obj)

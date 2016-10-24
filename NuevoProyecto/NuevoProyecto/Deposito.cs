@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NuevoProyecto
 {
-    public class Deposito<T>
+    public class Deposito<T> : IEnumerable<T>
     {
         public List<T> listaProductos;
         public int cantMaxima;
@@ -29,11 +29,6 @@ namespace NuevoProyecto
         }
 
 
-        public bool Agregar(T producto)
-        {
-            return this + producto;
-        }
-
 
         public bool ExisteElemento(T producto)
         {
@@ -50,6 +45,12 @@ namespace NuevoProyecto
 
 
 
+        public bool Agregar(T producto)
+        {
+            return this + producto;
+        }
+
+
         public static bool operator +(Deposito<T> deposito, T producto)
         {
 
@@ -64,7 +65,20 @@ namespace NuevoProyecto
         }
 
 
-        
 
+        //Implemento la interfaz IEnumerable para poder iterar en el program la lista<T>
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach (T item in this.listaProductos)
+            {
+                yield return item;
+            }
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
     }
 }
